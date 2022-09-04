@@ -44,7 +44,7 @@ console.log(ooo);
 console.log(copy);
 
 
-12-51
+// 12-51
 function repeat(n,f){
     for(var i = 0 ; i < n ; i ++){
         f(i);
@@ -61,3 +61,14 @@ var logOdds = function(i){
 }
 
 repeat(5,logOdds)
+
+//13-03
+
+var x = 'global';
+function foo () {
+    var x = 'local';
+    console.log(x);
+}
+
+foo();
+console.log(x);
