@@ -125,45 +125,61 @@
 //   }
 //   */
 
-//16-06
+// //16-06
 
-const person = {
-    // 데이터 프로퍼티
-    firstName: 'Ungmo',
-    lastName: 'Lee',
+// const person = {
+//     // 데이터 프로퍼티
+//     firstName: 'Ungmo',
+//     lastName: 'Lee',
 
-    // fullName은 접근자 함수로 구성된 접근자 프로퍼티다.
-    // getter 함수
-    get fullName() {
-        return `${this.firstName} ${this.lastName}`;
-    },
-    // setter 함수
-    set fullName(name) {
-        // 배열 디스트럭처링 할당: "31.1 배열 디스트럭처링 할당" 참고
-        [this.firstName, this.lastName] = name.split(' ');
-    }
-};
+//     // fullName은 접근자 함수로 구성된 접근자 프로퍼티다.
+//     // getter 함수
+//     get fullName() {
+//         return `${this.firstName} ${this.lastName}`;
+//     },
+//     // setter 함수
+//     set fullName(name) {
+//         // 배열 디스트럭처링 할당: "31.1 배열 디스트럭처링 할당" 참고
+//         [this.firstName, this.lastName] = name.split(' ');
+//     }
+// };
 
-// 데이터 프로퍼티를 통한 프로퍼티 값의 참조.
-console.log(person.firstName + ' ' + person.lastName); // Ungmo Lee
+// // 데이터 프로퍼티를 통한 프로퍼티 값의 참조.
+// console.log(person.firstName + ' ' + person.lastName); // Ungmo Lee
 
-// 접근자 프로퍼티를 통한 프로퍼티 값의 저장
-// 접근자 프로퍼티 fullName에 값을 저장하면 setter 함수가 호출된다.
-person.fullName = 'Heegun Lee';
-console.log(person); // {firstName: "Heegun", lastName: "Lee"}
+// // 접근자 프로퍼티를 통한 프로퍼티 값의 저장
+// // 접근자 프로퍼티 fullName에 값을 저장하면 setter 함수가 호출된다.
+// person.fullName = 'Heegun Lee';
+// console.log(person); // {firstName: "Heegun", lastName: "Lee"}
 
-// 접근자 프로퍼티를 통한 프로퍼티 값의 참조
-// 접근자 프로퍼티 fullName에 접근하면 getter 함수가 호출된다.
-console.log(person.fullName); // Heegun Lee
+// // 접근자 프로퍼티를 통한 프로퍼티 값의 참조
+// // 접근자 프로퍼티 fullName에 접근하면 getter 함수가 호출된다.
+// console.log(person.fullName); // Heegun Lee
 
-// firstName은 데이터 프로퍼티다.
-// 데이터 프로퍼티는 [[Value]], [[Writable]], [[Enumerable]], [[Configurable]] 프로퍼티 어트리뷰트를 갖는다.
-let descriptor = Object.getOwnPropertyDescriptor(person, 'firstName');
-console.log(descriptor);
-// {value: "Heegun", writable: true, enumerable: true, configurable: true}
+// // firstName은 데이터 프로퍼티다.
+// // 데이터 프로퍼티는 [[Value]], [[Writable]], [[Enumerable]], [[Configurable]] 프로퍼티 어트리뷰트를 갖는다.
+// let descriptor = Object.getOwnPropertyDescriptor(person, 'firstName');
+// console.log(descriptor);
+// // {value: "Heegun", writable: true, enumerable: true, configurable: true}
 
-// fullName은 접근자 프로퍼티다.
-// 접근자 프로퍼티는 [[Get]], [[Set]], [[Enumerable]], [[Configurable]] 프로퍼티 어트리뷰트를 갖는다.
-descriptor = Object.getOwnPropertyDescriptor(person, 'fullName');
-console.log(descriptor);
-  // {get: ƒ, set: ƒ, enumerable: true, configurable: true}
+// // fullName은 접근자 프로퍼티다.
+// // 접근자 프로퍼티는 [[Get]], [[Set]], [[Enumerable]], [[Configurable]] 프로퍼티 어트리뷰트를 갖는다.
+// descriptor = Object.getOwnPropertyDescriptor(person, 'fullName');
+// console.log(descriptor);
+//   // {get: ƒ, set: ƒ, enumerable: true, configurable: true}
+
+// 생성자 함수
+function Circle(radius) {
+    // 생성자 함수 내부의 this는 생성자 함수가 생성할 인스턴스를 가리킨다.
+    this.radius = radius;
+    this.getDiameter = function () {
+      return 2 * this.radius;
+    };
+  }
+  
+  // 인스턴스의 생성
+  const circle1 = new Circle(5);  // 반지름이 5인 Circle 객체를 생성
+  const circle2 = new Circle(10); // 반지름이 10인 Circle 객체를 생성
+  
+  console.log(circle1.getDiameter()); // 10
+  console.log(circle2.getDiameter()); // 20
