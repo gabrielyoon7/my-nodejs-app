@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,7 +8,19 @@
     <title>Document</title>
     <script src="index.js"></script>
 </head>
+
 <body>
-    
+    <input id="value" /><button onclick="hi()">ㅇㅇ</button>
+    <div id="target"></div>
 </body>
+
+<script>
+    const hi = () => {
+        console.log('hi')
+        const value = document.getElementById('value').value;
+        let targetTag = document.getElementById('target')
+        targetTag.innerHTML=value
+    }
+</script>
+
 </html>
