@@ -1,0 +1,25 @@
+{
+  "name": "my-nodejs-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabrielyoon7/my-nodejs-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.34.0"
+  },
+  "dependencies": {
+    "eslint-config-airbnb": "^19.0.4"
+  },
+  "bugs": {
+    "url": "https://github.com/gabrielyoon7/my-nodejs-app/issues"
+  },
+  "homepage": "https://github.com/gabrielyoon7/my-nodejs-app#readme"
+}
