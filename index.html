@@ -6,22 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="index.js"></script>
 </head>
 
 <body>
-    <input id="value" /><button onclick="hi()">ㅇㅇ</button>
-    <!-- input창에 <img src="#" onerror="console.log('XSS')"> 입력해보기 -->
-    <div id="target"></div>
-</body>
 
-<script>
-    const hi = () => {
-        console.log('hi')
-        const value = document.getElementById('value').value;
-        let targetTag = document.getElementById('target')
-        targetTag.innerHTML=value
-    }
-</script>
+</body>
+<script src="./index.js"></script>
 
 </html>
