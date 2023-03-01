@@ -9,27 +9,22 @@
 </head>
 
 <body>
-    <!-- <my-element my-attribute="foo"></my-element>
-    <my-button></my-button> -->
+
+    <my-element id="foo" my-attribute="bar"></my-element>
+
+    <!-- <div>
+        <my-counter></my-counter>
+    </div>
     <div>
         <my-counter></my-counter>
     </div>
     <div>
-        <my-counter id="fooCounter"></my-counter>
+        <my-counter></my-counter>
     </div>
     <div>
         <my-array></my-array>
-    </div>
-    <button onclick="increase()">특정 카운터를 외부에서 조작하기</button>
+    </div> -->
 </body>
 <script type="module" src="./index.js"></script>
-
-<script>
-    function increase() {
-        // const myCounter = document.querySelector('my-counter');
-        const myCounter = document.getElementById('fooCounter');
-        myCounter.handleClick();
-    }
-</script>
 
 </html>

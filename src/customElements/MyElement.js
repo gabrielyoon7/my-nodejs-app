@@ -1,13 +1,18 @@
 class MyElement extends HTMLElement {
   constructor() {
     super();
-    const myAttribute = this.getAttribute('my-attribute');
-    console.log(myAttribute); // prints the value of the 'my-attribute' attribute
-    this.innerHTML = 'Hello, world!';
+    this.myAttribute = this.getAttribute('my-attribute');
+    this.render();
+  }
+  connectedCallback() {
+    console.log('하이');
+  }
+  disconnectedCallback() {
+    console.log('바이');
   }
 
-  connectedCallback() {
-    console.log('MyElement was inserted into the document');
+  render() {
+    this.innerHTML = `Hello, world! ${this.myAttribute}`;
   }
 
   static get observedAttributes() {
@@ -15,7 +20,9 @@ class MyElement extends HTMLElement {
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
-    console.log(`Attribute ${name} changed from ${oldValue} to ${newValue}`);
+    console.log(`Attribute ${name}가 ${oldValue}에서 ${newValue}으로 바뀌었군요!`);
+    this.myAttribute = newValue;
+    this.render();
   }
 }
 
