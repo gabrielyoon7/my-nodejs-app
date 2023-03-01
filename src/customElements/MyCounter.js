@@ -5,17 +5,17 @@ class MyCounter extends HTMLElement {
   }
 
   connectedCallback() {
-    this.updateContent();
+    this.render();
     this.addEventListener('click', this.handleClick.bind(this));
   }
 
-  updateContent() {
-    this.textContent = `Count: ${this.state.count}`;
+  render() {
+    this.innerHTML = `Count: ${this.state.count}`;
   }
 
   handleClick() {
     this.state.count++;
-    this.updateContent();
+    this.render();
   }
 }
 export default MyCounter;

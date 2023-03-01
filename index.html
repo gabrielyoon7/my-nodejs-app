@@ -12,19 +12,28 @@
 
     <my-element id="foo" my-attribute="bar"></my-element>
 
-    <!-- <div>
+    <div>
         <my-counter></my-counter>
+    </div>
+    <div>
+        <my-counter id="hey"></my-counter>
     </div>
     <div>
         <my-counter></my-counter>
     </div>
     <div>
-        <my-counter></my-counter>
+        <button onclick="increaseCounter()">카운트를 증가시켜줘</button>
     </div>
     <div>
         <my-array></my-array>
-    </div> -->
+    </div>
 </body>
 <script type="module" src="./index.js"></script>
+<script>
+    function increaseCounter() {
+        const myCounter = document.getElementById('hey');
+        myCounter.handleClick();
+    }
+</script>
 
 </html>
