@@ -27,12 +27,22 @@
     <div>
         <my-array></my-array>
     </div>
+    <div>
+        <my-proxy id="myProxy"></my-proxy>
+    </div>
+    <div>
+        <button onclick="changeProxyState()">프록시의 상태를 바꿔보자</button>
+    </div>
 </body>
 <script type="module" src="./index.js"></script>
 <script>
     function increaseCounter() {
         const myCounter = document.getElementById('hey');
         myCounter.handleClick();
+    }
+    function changeProxyState() {
+        const myProxy = document.getElementById('myProxy');
+        myProxy.state.value = 'new value'
     }
 </script>
 
