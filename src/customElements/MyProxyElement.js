@@ -1,7 +1,6 @@
 class MyProxyElement extends HTMLElement {
   constructor() {
     super();
-    // https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Proxy
     this.state = new Proxy({ value: 'init value' }, {
       set: (obj, prop, value) => {
         obj[prop] = value;
@@ -12,15 +11,9 @@ class MyProxyElement extends HTMLElement {
     });
     this.render();
   }
-  connectedCallback() {
-    console.log('하이');
-  }
-  disconnectedCallback() {
-    console.log('바이');
-  }
 
   render() {
-    this.innerHTML = `Hello, world! ${this.state.value}`;
+    this.innerHTML = `현재 상태는? : ${this.state.value}`;
   }
 }
 
