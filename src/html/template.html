@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h2>템플릿 테스트 페이지</h2>
+  <button onclick="addItem()">추가하기</button>
+  <div id="list"></div>
+  <template id="template">
+    <div class="component">
+      <span class="text">아이템 </span>
+      <button onclick="deleteItem(this)">삭제</button>
+    </div>
+  </template>
+</body>
+<script>
+  const template = document.getElementById('template');
+  const container = document.getElementById('list');
+  let count = 0; // closure로 개선할 수 있을까?
+
+  function addItem() {
+    const newComponent = template.content.cloneNode(true);
+    newComponent.querySelector('.component').id = `item${count++}`;
+    newComponent.querySelector('.text').innerText = `아이템 ${count}`;
+    container.appendChild(newComponent);
+  }
+
+  function deleteItem(button) {
+    container.removeChild(button.parentNode);
+  }
+</script>
+
+</html>
