@@ -7,6 +7,7 @@ import MyProxyElement from './src/customElements/MyProxyElement.js';
 import ObjButton1 from './src/customElements/ObjButton1.js';
 import ObjButton2 from './src/customElements/ObjButton2.js';
 import MyCustomElement from './src/customElements/ObserverProxyPattern.js';
+import MyEnhancedElement from './src/customElements/MyEnhancedElement.js';
 
 console.log('실행');
 
@@ -32,3 +33,7 @@ const customElement = document.createElement('my-custom-element');
 document.body.appendChild(customElement);
 customElement.state.title = 'Hello, World!';
 customElement.state.content = 'This is a custom element';
+
+
+
+customElements.define('my-enhanced-element', MyEnhancedElement);
