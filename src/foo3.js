@@ -6,7 +6,7 @@ async function getPopularMovies() {
 function something() {
   //✨✨✨✨✨✨✨✨✨✨✨✨✨✨ 수정 가능 영역
   //✨✨✨✨✨✨✨✨✨✨✨✨✨✨
-  getPopularMovies()
-  console.log();
+  getPopularMovies().then((value) => console.log(value));
+  console.log('내가 먼저 출력 될거야');
 }
 something();
