@@ -8,6 +8,7 @@ import ObjButton1 from './src/customElements/ObjButton1.js';
 import ObjButton2 from './src/customElements/ObjButton2.js';
 import MyCustomElement from './src/customElements/ObserverProxyPattern.js';
 import MyEnhancedElement from './src/customElements/MyEnhancedElement.js';
+import MyCustomEvenetElement from './src/customElements/MyCustomEvenetElement.js';
 
 console.log('실행');
 
@@ -37,3 +38,8 @@ customElement.state.content = 'This is a custom element';
 
 
 customElements.define('my-enhanced-element', MyEnhancedElement);
+
+
+
+
+customElements.define('my-custom-event-element', MyCustomEvenetElement);

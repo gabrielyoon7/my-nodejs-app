@@ -43,6 +43,10 @@
     <div>
         <my-enhanced-element></my-enhanced-element>
     </div>
+    <div>
+        <my-custom-event-element></my-custom-event-element>
+        <button onclick="dispatchCustomEvent()">CustomEvent 건드리기</button>
+    </div>
 </body>
 <script type="module" src="./index.js"></script>
 <script>
@@ -53,6 +57,11 @@
     function changeProxyState() {
         const myProxy = document.getElementById('myProxy');
         myProxy.state.value = 'new value'
+    }
+    function dispatchCustomEvent() {
+        const customEvent = new CustomEvent('myCustomEvent', { detail: { key: '밸류!!' } });
+        const myCustomElement = document.querySelector('my-custom-event-element');
+        myCustomElement.dispatchEvent(customEvent);
     }
 </script>
 
