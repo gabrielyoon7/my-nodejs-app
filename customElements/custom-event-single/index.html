@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <my-custom-event-element></my-custom-event-element>
+  <button onclick="dispatchCustomEvent()">CustomEvent 건드리기</button>
+</body>
+<script type="module" src="./index.js"></script>
+<script>
+  function dispatchCustomEvent() {
+    const customEvent = new CustomEvent('myCustomEvent', { detail: { key: 'new value' } });
+    const myCustomElement = document.querySelector('my-custom-event-element');
+    myCustomElement.dispatchEvent(customEvent);
+  }
+</script>
+
+</html>
