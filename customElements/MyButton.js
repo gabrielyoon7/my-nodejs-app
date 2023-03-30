@@ -1,3 +1,5 @@
+// Shadow DOM
+
 class MyButton extends HTMLElement {
   constructor() {
     super();
