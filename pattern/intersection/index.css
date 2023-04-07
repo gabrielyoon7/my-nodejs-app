@@ -1,0 +1,11 @@
+.card{
+  background-color: aqua;
+  height: 300px;
+  margin-bottom: 10px;
+}
+
+.target{
+  background-color: yellow;
+  height: 100px;
+  margin-bottom: 10px;
+}
