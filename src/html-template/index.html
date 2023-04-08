@@ -10,31 +10,15 @@
 
 <body>
   <h2>템플릿 테스트 페이지</h2>
-  <button onclick="addItem()">추가하기</button>
+  <button id="add-button">추가하기</button>
   <div id="list"></div>
   <template id="template">
     <div class="component">
       <span class="text">아이템 </span>
-      <button onclick="deleteItem(this)">삭제</button>
+      <button class="delete-button">삭제</button>
     </div>
   </template>
+  <script type="module" src="./index.js"></script>
 </body>
-<script type="module" src="./index.js"></script>
-<script>
-  const template = document.getElementById('template');
-  const container = document.getElementById('list');
-  let count = 0; // closure로 개선할 수 있을까?
-
-  function addItem() {
-    const newComponent = template.content.cloneNode(true);
-    newComponent.querySelector('.component').id = `item${count++}`;
-    newComponent.querySelector('.text').innerText = `아이템 ${count}`;
-    container.appendChild(newComponent);
-  }
-
-  function deleteItem(button) {
-    container.removeChild(button.parentNode);
-  }
-</script>
 
 </html>
