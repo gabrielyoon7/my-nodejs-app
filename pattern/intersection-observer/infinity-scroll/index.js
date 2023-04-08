@@ -1,10 +1,11 @@
 console.log('import 성공!');
 const observeIntersection = (target, callback) => {
   const observer = new IntersectionObserver((entries) => {
-    const isElementVisible = entries[0].isIntersecting;
-    if (isElementVisible) {
-      callback();
-    }
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        callback();
+      }
+    });
   });
   observer.observe(target);
 }
