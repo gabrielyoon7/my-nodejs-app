@@ -1,10 +1,10 @@
 import print from "./src/print.js";
 import increase from "./src/increase.js";
 
-print();
+print(); // 0
 increase();
-print();
+print(); // 1
 increase();
 increase();
 increase();
-print();
+print(); // 4
